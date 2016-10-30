@@ -1,0 +1,200 @@
+*, html, body{
+	margin: 0;
+	padding: 0;
+	font-family: "vollkorn";
+}
+
+.clear{
+	clear: both;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.container{
+	width: 100vw;
+	height: 100vh;
+	background-color: #1c1c1c;
+	color: #fff;
+	padding: 8px;
+}
+
+.top-panel{
+}
+
+.left-panel{
+	float: left;
+	width: 256px;
+	overflow-y: scroll;
+	height: 98vh;
+	text-align: center;
+	padding-top: 16px;
+}
+
+.right-panel{
+	/*
+	float: right;
+	width: calc(100% - 256px);
+	*/
+	float: left;
+	width: 1024px;
+}
+
+.search-bar{
+	height: 2em;
+	width: 196px;
+	border-radius: 6px;
+	border: none;
+	padding: 0 8px;
+	background-color: #e7e7e7;
+}
+
+.search-response{
+	padding: 4px 14px 4px 0px;
+}
+
+.artist-info-search{
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.artist-info-search-img{
+	display: inline-block;
+	float: left;
+	border: 1px solid #fff;
+	
+}
+
+.artist-info-search-img img{
+	width: 48px;
+	height: 48px;
+}
+
+.artist-info-name{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.band-info{
+	display: block;
+	padding: 0 16px;
+}
+
+.band-image img{
+	width: 128px;
+	height: 128px;
+	border: 1px solid white;
+	float: left;
+}
+
+.band-name{
+	display: inline-block;
+	font-size: 48px;
+	margin-left: 12px;
+}
+
+.band-description{
+	font-size: 12px;
+	position: relative;
+	left: 32px;
+	width: 1024px;
+}
+
+.band-albums{
+	border-top: 1px solid #efefef;
+	padding: 8px;
+	margin: 8px;
+}
+
+.albums-header{
+	display: flex;
+	align-items: center;
+	font-size: 32px;
+	padding: 8px 12px 0px;
+}
+
+.albums-header-title{
+	display: inline;
+}
+
+.band-album-display-info{
+	display: flex;
+	align-items: center;
+}
+
+.band-album-img{
+	display: inline-block;
+}
+
+.band-album-img img{
+	width: 64px;
+	height: 64px;
+}
+
+.band-album-name{
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 32px;
+}
+
+.band-album-songs{
+	max-width: 1024px;
+}
+
+.album-song{
+	border-bottom: 1px solid #666;
+}
+
+.album-song-name{
+	display: inline-block;
+}
+
+.album-song-length{
+	display: inline-block;
+	float: right;
+}
+
+.edit-band-btn, .add-album-btn, .edit-album-btn{
+	display: inline;
+	font-size: 12px;
+	cursor: pointer;
+	padding-left: 6px;
+}
+
+.add-band-btn{
+	display: inline-block;
+	background-color: #39e639;
+	padding: 2px 8px;
+	border-radius: 6px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.add-album-btn{
+	background-color: #39e639;
+	padding: 4px 8px;
+	border-radius: 3px;
+	margin-left: 12px;
+}
+
+.delete-band-btn{
+	display: inline-block;
+	padding-left: 8px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.delete-album-btn{
+	font-size: 14px;
+	padding-left: 8px;
+	cursor: pointer;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/index.css">
+        <link type="text/css" rel="stylesheet" href="css/fonts.css">
+        <link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/angularjs-1.5.7.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controller.js"></script>
+        <title>ArtistDB</title>
+    </head>
+    
+    <body ng-app="app" ng-controller="appController">
+    	<div class="container">
+        	<div class="top-panel">ArtistDB</div>
+            <div class="left-panel">
+            	<form autocomplete="off">
+                	<input type="text" class="search-bar" placeholder="type here to search..." ng-change="search()" ng-model="keywords" />
+                </form>
+                <div class="search-response" ng-repeat="x in searchResponse">
+                	<div class="artist-info-search" ng-click="LoadBand(x)">
+                    	<div class="artist-info-search-img"><img ng-src="{{x.imgurl}}"></div>
+                        <div class="artist-info-name">{{x.name}}</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="add-band-btn" ng-click="NewArtist()">
+                	<i class="fa fa-plus" aria-hidden="true"> Add Artist</i>
+
+                </div>
+            </div>
+            <div class="right-panel">
+            	<div class="band-info">
+                	<div class="band-image">
+                    	<img ng-src="{{currentBand.imgurl}}" />
+                    </div>
+                    <div class="band-name">{{currentBand.name}}</div>
+                    <div class="edit-band-btn" ng-click="EditArtist()">
+                    	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+					</div>
+                    <div class="delete-band-btn" ng-click="DeleteArtist()">
+                    	<i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="band-description">{{currentBand.description}}</div>
+                </div>
+                <div class="clear"></div>
+                <div class="albums-header">
+                	<div class="albums-header-title">Albums</div>
+                	<div class="add-album-btn" ng-click="NewAlbum()">
+                    	<i class="fa fa-plus" aria-hidden="true">Add Album</i>
+                    </div>
+                </div>
+                <div class="band-albums" ng-repeat="x in currentBand.albums">
+                	<div class="band-album-display">
+                    	<div class="band-album-display-info">
+                            <div class="band-album-img"><img ng-src="{{x.imgurl}}"></div>
+                            <div class="band-album-name">{{x.name + " (" + x.releaseyear + ")"}}</div>
+                            <div class="edit-album-btn" ng-click="EditAlbum()">
+                            	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</div>
+                            <div class="delete-album-btn" ng-click="DeleteAlbum()">
+                            	<i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="band-album-songs" ng-repeat="y in x.songs">
+                        	<div class="album-song">
+                            	<div class="album-song-name">{{y.tracknumber + ". " + y.name}}</div>
+                                <div class="album-song-length">{{ToMinutesSeconds(y.length)}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
